@@ -2,14 +2,17 @@ import { prisma } from "../../../lib/prisma";
 import { NextApiRequest, NextApiResponse } from "next";
 
 export async function getUsers(req: NextApiRequest, res: NextApiResponse) {
+  switch (req.method) {
+    case "GET":
+      const users = await prisma.user.findMany({
+        select: {
+          username: true,
+          email: true,
+        },
+      });
+      res.json(users);
+  }
   if (req.method === "GET") {
-    const users = await prisma.user.findMany({
-      select: {
-        username: true,
-        email: true,
-      },
-    });
-    res.json(users);
   } else if (req.method === "POST") {
     const user = await prisma.user.create({
       data: {
