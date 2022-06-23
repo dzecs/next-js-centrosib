@@ -11,13 +11,51 @@ datasource db {
 }
 
 model User {
-  id            Int @id @default(autoincrement())
-  username      String   @unique
-  email         String   @db.VarChar(125) @unique
-  first_name    String?
-  last_name     String?
-	password      String
-  createdAt     DateTime  @default(now()) @map(name: "created_at")
-  updatedAt     DateTime  @updatedAt @map(name: "updated_at")
-				@@map(name: "users")
+  id         Int      @id @default(autoincrement())
+  username   String   @unique
+  email      String   @unique @db.VarChar(125)
+  first_name String?
+  last_name  String?
+  password   String
+  createdAt  DateTime @default(now()) @map(name: "created_at")
+  updatedAt  DateTime @updatedAt @map(name: "updated_at")
+
+  @@map(name: "users")
 }
+
+model Doctor {
+  id                     Int                     @id @default(autoincrement())
+  first_name             String                  @db.VarChar(50)
+  last_name              String                  @db.VarChar(50)
+  professional_statement String                  @db.VarChar(4000)
+  image_url              String                  @db.VarChar(255)
+  Doctor_Specialization  Doctor_Specialization[]
+  createdAt              DateTime                @default(now()) @map(name: "created_at")
+  updatedAt              DateTime                @updatedAt @map(name: "updated_at")
+
+  @@map(name: "doctors")
+}
+
+model Doctor_Specialization {
+  id                Int           @id @default(autoincrement())
+  doctor_id         Int
+  doctor            Doctor        @relation(fields: [doctor_id], references: [id])
+  specialization_id Int
+  specialization    Specializaton @relation(fields: [specialization_id], references: [id])
+  createdAt         DateTime      @default(now()) @map(name: "created_at")
+  updatedAt         DateTime      @updatedAt @map(name: "updated_at")
+
+  @@map(name: "doctor_specialization")
+}
+
+model Specializaton {
+  id                    Int                     @id
+  specialization_name   String                  @db.VarChar(100)
+  createdAt             DateTime                @default(now()) @map(name: "created_at")
+  updatedAt             DateTime                @updatedAt @map(name: "updated_at")
+  Doctor_Specialization Doctor_Specialization[]
+
+  @@map(name: "specialization")
+}
+
+
