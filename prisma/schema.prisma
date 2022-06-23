@@ -12,7 +12,7 @@ datasource db {
 
 model User {
   id         Int      @id @default(autoincrement())
-  username   String   
+  username   String   @unique
   email      String   @db.VarChar(125)
   first_name String?
   last_name  String?
@@ -20,7 +20,6 @@ model User {
   createdAt  DateTime @default(now()) @map(name: "created_at")
   updatedAt  DateTime @updatedAt @map(name: "updated_at")
 
-  @@unique([username, email])
   @@map(name: "users")
 }
 
