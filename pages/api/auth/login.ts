@@ -1,16 +1,22 @@
 import { prisma } from "../../../lib/prisma";
 import { NextApiRequest, NextApiResponse } from "next";
-import { compare, hash } from "bcrypt";
+import { compare } from "bcrypt";
 import { sign } from "jsonwebtoken";
 
-async function signup(req: NextApiRequest, res: NextApiResponse) {
+async function signup(
+  req: NextApiRequest,
+  res: NextApiResponse,
+  user: { username: string }
+) {
   if (req.method === "POST") {
     try {
-      const { user_name, password } = req.body;
+      const { username, password } = req.body;
       const existingUser = await prisma.user.findUnique({
-        where: { username: user_name },
+        where: {
+          username: user.username,
+        },
       });
-      if (!user_name || !password) {
+      if (!username || !password) {
         res.status(400);
         throw new Error("Invalid login.");
       }
