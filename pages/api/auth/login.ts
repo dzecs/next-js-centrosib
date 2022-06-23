@@ -3,17 +3,13 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { compare } from "bcrypt";
 import { sign } from "jsonwebtoken";
 
-async function signup(
-  req: NextApiRequest,
-  res: NextApiResponse,
-  user: { username: string }
-) {
+async function signup(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === "POST") {
     try {
       const { username, password } = req.body;
       const existingUser = await prisma.user.findUnique({
         where: {
-          username: user.username,
+          username,
         },
       });
       if (!username || !password) {
