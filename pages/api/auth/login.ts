@@ -9,7 +9,7 @@ async function signup(req: NextApiRequest, res: NextApiResponse) {
       const { username, password } = req.body;
       const existingUser = await prisma.user.findUnique({
         where: {
-          username,
+          username: username,
         },
       });
       if (!username || !password) {
