@@ -7,7 +7,7 @@ async function signup(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === "POST") {
     try {
       const { username, password } = req.body;
-      const existingUser = await prisma.user.findFirst({
+      const existingUser = await prisma.user.findUnique({
         where: {
           username,
         },
