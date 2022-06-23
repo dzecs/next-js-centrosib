@@ -6,13 +6,11 @@ import { sign } from "jsonwebtoken";
 async function signup(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === "POST") {
     try {
-      const { username, password } = req.body;
+      const { user_name, password } = req.body;
       const existingUser = await prisma.user.findUnique({
-        where: {
-          username: username,
-        },
+        where: { username: user_name },
       });
-      if (!username || !password) {
+      if (!user_name || !password) {
         res.status(400);
         throw new Error("Invalid login.");
       }
