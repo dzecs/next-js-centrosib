@@ -67,7 +67,7 @@ export default function login() {
           </div>
         </form>
         <div className="flex justify-between mx-5 text-sm">
-          <p className="text-gray-400">No tenés una cuenta? Registrate -></p>
+          <p className="text-gray-400">No tenés una cuenta? Registrate</p>
           <button>
             <Link href="/signup">
               <a className="text-blue-300 hover:text-blue-500">Registrarse</a>
