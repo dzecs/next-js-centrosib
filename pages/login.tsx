@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import Link from "next/link";
 
-export default function login() {
+export default function Login() {
   const bottomRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
