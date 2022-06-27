@@ -1,9 +1,34 @@
 import Link from "next/link";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 export default function Signup() {
   const bottomRef = useRef<HTMLDivElement>(null);
+  const [userName, setUserName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [checkPassword, setCheckPassword] = useState("");
 
+  // fetch
+  const url = "/api/auth/signup/";
+  const options = {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json;charset=UTF-8",
+    },
+    body: JSON.stringify({
+      username: userName,
+      password: password,
+      email: email,
+    }),
+  };
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+    const response = await fetch(url, options);
+    const jsonResponse = await response.json();
+    console.log(jsonResponse.data);
+  };
   useEffect(() => {
     //Scrolls to bottom to hide the NavBar when login in
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -20,6 +45,7 @@ export default function Signup() {
           Ingresá tu usuario y contraseña debajo
         </p>
         <form
+          onSubmit={handleSubmit}
           action="
   "
         >
@@ -31,6 +57,28 @@ export default function Signup() {
               type="text"
               placeholder="Usuario"
               id="user"
+              required
+              onChange={(e) => {
+                setUserName(e.target.value);
+              }}
+              className="bg-slate-100 rounded-md w-11/12 pl-3 h-9"
+            />
+          </div>
+
+          <div className="flex flex-col items-center mb-4">
+            <label
+              htmlFor="password"
+              className="flex justify-between w-11/12 text-xs mb-2"
+            >
+              E-mail
+            </label>
+            <input
+              type="email"
+              placeholder="E-mail"
+              id="email"
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
               required
               className="bg-slate-100 rounded-md w-11/12 pl-3 h-9"
             />
@@ -47,6 +95,9 @@ export default function Signup() {
               type="password"
               placeholder="Contraseña"
               id="password"
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
               required
               className="bg-slate-100 rounded-md w-11/12 pl-3 h-9"
             />
@@ -63,6 +114,9 @@ export default function Signup() {
               placeholder="Contraseña"
               id="repeat-password"
               required
+              onChange={(e) => {
+                setCheckPassword(e.target.value);
+              }}
               className="bg-slate-100 rounded-md w-11/12 pl-3 h-9"
             />
           </div>
