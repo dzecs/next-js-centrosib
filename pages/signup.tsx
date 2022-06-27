@@ -70,7 +70,7 @@ export default function Signup() {
               htmlFor="password"
               className="flex justify-between w-11/12 text-xs mb-2"
             >
-              E-mail
+              E-MAIL
             </label>
             <input
               type="email"
