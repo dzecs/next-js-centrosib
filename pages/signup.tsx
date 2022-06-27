@@ -37,7 +37,7 @@ export default function Signup() {
   return (
     <div className="h-screen bg-slate-800 flex flex-row justify-center items-center">
       <section className="w-96 h-[36.5rem] bg-white rounded-lg mx-4">
-        <h1 className="text-center text-gray-400 mt-24 mb-8 text-xl">
+        <h1 className="text-center text-gray-400 mt-10 mb-8 text-xl">
           CENTROSIB
         </h1>
         <h2 className="text-center font-bold text-2xl mb-4">Registro</h2>
@@ -102,7 +102,7 @@ export default function Signup() {
               className="bg-slate-100 rounded-md w-11/12 pl-3 h-9"
             />
           </div>
-          <div className="flex flex-col items-center mb-4">
+          <div className="flex flex-col items-center mb-1">
             <label
               htmlFor="repeat-password"
               className="flex justify-between w-11/12 text-xs mb-2"
