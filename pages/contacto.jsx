@@ -1,14 +1,14 @@
 import React from "react";
 
-export default function contacto() {
+export default function Contacto() {
   return (
     <div id="contacto">
-      <div class="contacto">
+      <div className="contacto">
         <h1>Contacto</h1>
       </div>
       <div id="nav">
-        <p class="texto-contacto">
-          <strong class="direccion">
+        <p className="texto-contacto">
+          <strong className="direccion">
             {/*   <img class="geoCerca-ico" src={""} />*/}
             Av. Estrugamou 250, Venado Tuerto, Santa Fe.
           </strong>
