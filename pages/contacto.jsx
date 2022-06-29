@@ -2,46 +2,49 @@ import React from "react";
 
 export default function contacto() {
   return (
-    <div id="contacto">
-      <div class="contacto">
-        <h1>Contacto</h1>
+    <div className="flex flex-col">
+      <div className="">contacto</div>
+      <div className="text-xl font-bold">
+        Av. Estrugamou 250, Venado Tuerto, Santa Fe.
       </div>
-      <div id="nav">
-        <p class="texto-contacto">
-          <strong class="direccion">
-            {/*   <img class="geoCerca-ico" src={""} />*/}
-            Av. Estrugamou 250, Venado Tuerto, Santa Fe.
-          </strong>
-        </p>
-      </div>
-      <div id="contenido">
-        <div id="izquierda">
-          <form className="form" action="#" method="POST">
-            <input type="text" name="Nombre" placeholder="Ingrese su nombre" />
-
-            <input type="text" name="Email" placeholder="Ingrese su Email" />
+      <div className="grid grid-cols-2 border-4 w-screen">
+        <div>
+          <form className="" action="#" method="POST">
+            <input
+              className="border-black border-[1px]"
+              type="text"
+              name="Nombre"
+              placeholder="Ingrese su nombre"
+            />
 
             <input
+              className="border-black border-[1px]"
+              type="text"
+              name="Email"
+              placeholder="Ingrese su Email"
+            />
+
+            <input
+              className="border-black border-[1px]"
               type="text"
               name="Asunto"
               placeholder="Motivo de la consulta"
             />
 
             <textarea
+              className="border-black border-[1px]"
               name="Mensaje"
               placeholder="Ingrese su mensaje"
             ></textarea>
 
-            <button className="boton-enviar">Enviar</button>
+            <button className="bg-blue-800 w-24 border-lime-700 border-2 text-white">
+              Enviar
+            </button>
           </form>
-
-          {/* <img class="whatsapp-ico" src={""} /> */}
           <h2>
             <strong>3462-518748</strong>
           </h2>
           <h2>
-            {/* <img class="mensaje-ico" src={""} /> */}
-
             <strong>
               <a href="centrocib@gmail.com" class="email-contacto">
                 centrocib@gmail.com
@@ -49,12 +52,11 @@ export default function contacto() {
             </strong>
           </h2>
           <h3>Horarios</h3>
-
           <p>Lunes a Viernes: 08:00 a 20:00</p>
           <p>Sabado, Domingos y Feriados: GUARDIA</p>
           <p></p>
         </div>
-        <div id="derecha">
+        <div>
           <iframe
             className="mapa"
             title="mapa"
@@ -67,141 +69,6 @@ export default function contacto() {
           ></iframe>
         </div>
       </div>
-      <div id="footer">
-        <footer></footer>
-      </div>
-      <style jsx>{`
-        #nav {
-          height: 40%;
-          margin-bottom: 10px;
-        }
-        #contenido {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          height: 50%;
-          width: 100%;
-        }
-        #izquierda {
-          margin-top: 5px;
-          text-align: center;
-          width: 100%;
-        }
-        #derecha {
-          margin-top: 5px;
-          text-align: center;
-          width: 100%;
-          height: 100%;
-        }
-        #footer {
-        }
-        h1 {
-          font-family: var(--body-font);
-          color: rgb(173, 15, 15) !important;
-          opacity: 1;
-          margin-left: 40%;
-          text-align: left;
-        }
-
-        .texto-contacto {
-          text-align: center;
-        }
-
-        .email-contacto {
-          color: #000;
-          text-decoration: none;
-        }
-        .email-contacto:hover {
-          text-decoration: underline;
-        }
-
-        .form {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: flex-end;
-          margin-right: 2rem;
-        }
-        /* input[type='text'],
-      input[type='Email'] {
-        border: 1px solid #ccc;
-        padding: 5px;
-        border-radius: 5px;
-        margin: 5px;
-        margin-right: auto;
-      } */
-        input {
-          width: 329px;
-          height: 30px;
-          padding: 10px;
-          margin-top: 10px;
-        }
-        textarea {
-          width: 329px;
-          border: 1px solid #ccc;
-          padding: 5px;
-          border-radius: 5px;
-          margin-top: 10px;
-        }
-        .boton-enviar {
-          width: 5rem;
-          padding: 10px;
-          margin-top: 10px;
-          background: #0489b1;
-          color: white;
-          border: 1px solid #048;
-          border-radius: 5px;
-          text-align: center;
-        }
-        #contacto {
-          /*  background-image: url('../../Assets/img/dentistaAbajo.jpg');*/
-          min-height: 100vh;
-          background-position: center center;
-          background-repeat: no-repeat;
-          background-size: cover;
-          background-attachment: fixed;
-          /* position: absolute; */
-        }
-        /* #Mapa {
-        width: 50%;
-        height: auto;
-        overflow: hidden;
-        text-align: center;
-        margin-top: 20%;
-        position: absolute;
-        border-radius: 20px;
-      } */
-        .mapa {
-          display: flex;
-          align-items: flex-start;
-          margin-left: 2rem;
-          border-radius: 5px;
-          border: 2px rgb(196, 194, 194) solid;
-        }
-        .mensaje-ico {
-          width: 6%;
-          height: 6%;
-          position: absolute;
-          text-align: center;
-        }
-        .whatsapp-ico {
-          width: 6%;
-          height: 6%;
-          position: absolute;
-          text-align: center;
-        }
-        .geoCerca-ico {
-          width: 4%;
-          height: 4%;
-          position: absolute;
-          margin-left: 32%;
-        }
-        h2 {
-          color: #000;
-        }
-        h3 {
-          border-top: 20px;
-        }
-      `}</style>
     </div>
   );
 }
