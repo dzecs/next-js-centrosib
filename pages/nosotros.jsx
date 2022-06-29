@@ -10,7 +10,7 @@ export default function Nosotros() {
 				implantes
 				estetica
 			</h1>
-			<div className='imagen1'><Image src="img/CentroSib-1-900x600.png" alt="" width={300} height={200} /> </div>
+			<div className='imagen1'><Image src="/img/CentroSib-1-900x600.png" alt="" width={300} height={200} /> </div>
 			<div className='parrafo1'>
 				<h3>Los orígenes de CentroSib se remontan al año 1950,
 					cuando un grupo de prestigiosos profesionales de la Odontología se agrupan.
@@ -21,7 +21,7 @@ export default function Nosotros() {
 					importantes a nivel nacional en términos cuantitativos y cualitativos.
 				</h3>
 			</div>
-			<div className='imagen2'><Image src="img/CentroSib-2-900x600.png" alt="" width={300} height={200} /> </div>
+			<div className='imagen2'><Image src="/img/CentroSib-2-900x600.png" alt="" width={300} height={200} /> </div>
 			<div className='parrafo2'>
 				<h3>
 					La trayectoria del CentroSib se transmite entre nuestros profecionales,
@@ -34,13 +34,13 @@ export default function Nosotros() {
 					DE FORMA ÁGIL Y EN UN MISMO LUGAR
 				</h3>
 			</div>
-			<div className='imagen3'><Image src="img/CentroSib-3-900x600.png" alt="" width={300} height={200} /> </div>
+			<div className='imagen3'><Image src="/img/CentroSib-3-900x600.png" alt="" width={300} height={200} /> </div>
 			<div className='parrafo3'>
 				TODO LO QUE EL PACIENTE NECESITA, EN DIAGNÓSTICO Y TRATAMIENTO ODONTOLOGICO,
 				DE FORMA ÁGIL Y EN UN MISMO LUGAR
 			</div>
-			<div className='imagen4'><Image src="img/CentroSib-4-900x600.png" alt="" width={300} height={200} /> </div>
-			<div className='imagen5'><Image src="img/ortodoncia5.jpg" alt="" width={300} height={200} /> </div>
+			<div className='imagen4'><Image src="/img/CentroSib-4-900x600.png" alt="" width={300} height={200} /> </div>
+			<div className='imagen5'><Image src="/img/ortodoncia5.jpg" alt="" width={300} height={200} /> </div>
 
 			<style jsx>{`
         .parrafo1{
