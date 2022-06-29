@@ -9,7 +9,7 @@ export default function contacto() {
       <div id="nav">
         <p class="texto-contacto">
           <strong class="direccion">
-            <img class="geoCerca-ico" src={""} />
+            {/*   <img class="geoCerca-ico" src={""} />*/}
             Av. Estrugamou 250, Venado Tuerto, Santa Fe.
           </strong>
         </p>
@@ -35,12 +35,12 @@ export default function contacto() {
             <button className="boton-enviar">Enviar</button>
           </form>
 
-          <img class="whatsapp-ico" src={""} />
+          {/* <img class="whatsapp-ico" src={""} /> */}
           <h2>
             <strong>3462-518748</strong>
           </h2>
           <h2>
-            <img class="mensaje-ico" src={""} />
+            {/* <img class="mensaje-ico" src={""} /> */}
 
             <strong>
               <a href="centrocib@gmail.com" class="email-contacto">
