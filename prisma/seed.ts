@@ -6,7 +6,7 @@ async function main() {
     data: [
       {
         id: 1,
-        specialization_name: "Hello",
+        specialization_name: "Odontología General",
       },
       {
         id: 2,
@@ -38,12 +38,12 @@ async function main() {
   const doctorSpecializations = await prisma.doctor_Specialization.createMany({
     data: [
       {
-        doctor_id: 1,
-        specialization_id: 3,
+        doctorId: 1,
+        specializationId: 3,
       },
       {
-        doctor_id: 1,
-        specialization_id: 1,
+        doctorId: 1,
+        specializationId: 1,
       },
     ],
     skipDuplicates: false,
