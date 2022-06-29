@@ -44,6 +44,7 @@ model Session {
 
 model User {
   id            String    @id @default(cuid())
+  username      String
   name          String?
   email         String?   @unique @db.VarChar(125)
   emailVerified DateTime? @map("email_verified")
