@@ -1,6 +1,7 @@
 import React from 'react'
+import Image from 'next/image'
 
-export default function nosotros() {
+export default function Nosotros() {
     return (
     <div>
         <div className='container'>
@@ -164,35 +165,3 @@ export default function nosotros() {
                 text-align: justify;
                 font-weight: 300;
             }
-
-            h3:hover{
-                font-size:2.5rem;
-                transition:2s;
-            }
-
-            .parrafo1{
-                background:#222;
-            }
-            
-            .dentista{
-                background:#CEF2CC;
-                display:inline-block;
-                border-radius:15px;
-                margin:2px;
-            }
-
-            img{
-                
-                display:inline-block;
-                border-radius:10px;
-                margin:10px;
-                width:450px;
-                height:300px;
-                object-fit: cover;
-            }
-            
-        `}</style>
-    </div>
-    
-    )
-}
