@@ -17,6 +17,7 @@ export default function nosotros() {
             <div className='imagen1'>
                 <img src="img/dentista7.jpg" />
                 <img src="img/CentroSib-1-900x600.png" />
+                <img src="img/dentista6.jpg"/>
             </div>      
             
             
@@ -119,7 +120,7 @@ export default function nosotros() {
                 <img src="img/dentista5.jpg"/>
             </div>
             <div className='dentista'>   
-                <img src="img/dentista6.jpg"/>
+                
                 
                 <img src="img/dentista10.jpg"/>
             </div>
@@ -187,7 +188,7 @@ export default function nosotros() {
                 border-radius:10px;
                 margin:10px;
                 width:450px;
-                height:300px;
+                height:290px;
                 object-fit: cover;
             }
             
