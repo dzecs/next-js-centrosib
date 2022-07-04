@@ -79,15 +79,18 @@ export default function nosotros() {
             </div>
             <div calassName='consultorio'>
                 <h3>Nuestros consultorios</h3>
-                <div className='consultorio__img1'>
-                    <img src="img/consultorio1.jpg" />
+                <img src="img/consultorio1.jpg" />
+                <img src="img/consultorio2.jpg" />
+                <img src="img/consultorio3.jpg" />
+                {/* <div className='consultorio__img1'>
+                    
                 </div>
                 <div className='consultorio__img2'>
-                    <img src="img/consultorio2.jpg" />
+                    
                 </div>
                 <div className='consultorio__img3'>
-                    <img src="img/consultorio3.jpg" />
-                </div>
+                    
+                </div> */}
             </div>
             <div className='ortodoncia'>
                 <div className='ortodoncia__'>
@@ -191,7 +194,9 @@ export default function nosotros() {
                 height:290px;
                 object-fit: cover;
             }
-            
+            .consultorio{
+                display:block;
+            }
         `}</style>
     </div>
     
