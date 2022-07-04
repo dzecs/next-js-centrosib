@@ -4,7 +4,7 @@ export default function nosotros() {
     return (
     <div>
         <div className='container'>
-            <div className='nosotros'> Sobre nosotros
+            <div className='nosotros'>
                 <h1> QUIÉNES SOMOS
                     Somos un grupo de odontólogos dedicados construir sonrisas,
                     unimos salud bucal, estética y calidad. 
@@ -128,19 +128,18 @@ export default function nosotros() {
             .container{
                 margin-left:auto;
                 margin-right:auto;
-                
             }
+
             div{
                 background:#E4FEE7;
-                
             }
+
             div:hover{
                 background:#EFFFEE;
                 border:1px solid #333;
                 border-radius:4px;
                 transition:.3s;
             }
-
 
             h1 {
                 font-size: 2.3em;
@@ -149,6 +148,7 @@ export default function nosotros() {
                 text-align: center;
                 font-weight: 300;
             }
+
             h2 {
                 font-size: 2.3em;
                 line-height: 1.3em;
@@ -156,6 +156,7 @@ export default function nosotros() {
                 text-align: justify;
                 font-weight: 300;
             }
+
             h3 {
                 font-size: 2.3em;
                 line-height: 1.3em;
@@ -163,15 +164,12 @@ export default function nosotros() {
                 text-align: justify;
                 font-weight: 300;
             }
+
             h3:hover{
                 font-size:2.5rem;
                 transition:2s;
             }
 
-            .nosotros{
-                background-image: url("../public/img/CentroSib-2-900x600.png");            
-            }
-            
             .parrafo1{
                 background:#222;
             }
@@ -182,13 +180,15 @@ export default function nosotros() {
                 border-radius:15px;
                 margin:2px;
             }
+
             img{
                 
                 display:inline-block;
                 border-radius:10px;
                 margin:10px;
-                
-
+                width:450px;
+                height:300px;
+                object-fit: cover;
             }
             
         `}</style>
