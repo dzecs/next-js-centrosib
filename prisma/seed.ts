@@ -2,11 +2,11 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 async function main() {
-  const specializations = await prisma.specializaton.createMany({
+  const specializations = await prisma.specialization.createMany({
     data: [
       {
         id: 1,
-        specialization_name: "Hello",
+        specialization_name: "Odontología General",
       },
       {
         id: 2,
@@ -35,15 +35,15 @@ async function main() {
       image_url: "../public/vercel.svg",
     },
   });
-  const doctorSpecializations = await prisma.doctor_Specialization.createMany({
+  const doctorSpecializations = await prisma.doctorsSpecialization.createMany({
     data: [
       {
-        doctor_id: 1,
-        specialization_id: 3,
+        doctorId: 1,
+        specializationId: 3,
       },
       {
-        doctor_id: 1,
-        specialization_id: 1,
+        doctorId: 1,
+        specializationId: 1,
       },
     ],
     skipDuplicates: false,

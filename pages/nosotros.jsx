@@ -1,6 +1,7 @@
 import React from 'react'
+import Image from 'next/image'
 
-export default function nosotros() {
+export default function Nosotros() {
     return (
     <div>
         <div className='container'>
@@ -61,7 +62,6 @@ export default function nosotros() {
                     <h3>Tatamientos de limpieza</h3>
                     <img src="img/limpieza.jpg"/>
                 </div>
-
                 <div className='limpieza2'>
                     <h3>Mejorando la calidad de vida de nuestros pacientes</h3>
                     <img src="img/limpieza1.jpg"/>
@@ -113,7 +113,6 @@ export default function nosotros() {
                 </div>
             </div>
 
-
             <div className='dentista'>
                 <img src="img/dentista1.jpg"/>
                 <img src="img/dentista2.jpg"/>
@@ -123,7 +122,6 @@ export default function nosotros() {
                 <img src="img/dentista5.jpg"/>
             </div>
             <div className='dentista'>   
-                
                 
                 <img src="img/dentista10.jpg"/>
             </div>
@@ -144,7 +142,6 @@ export default function nosotros() {
                 border-radius:4px;
                 transition:.3s;
             }
-
             h1 {
                 font-size: 2.3em;
                 line-height: 1.3em;

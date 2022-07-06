@@ -10,18 +10,61 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id         Int      @id @default(autoincrement())
-  username   String
-  email      String   @db.VarChar(125)
-  first_name String?
-  last_name  String?
-  password   String
-  createdAt  DateTime @default(now()) @map(name: "created_at")
-  updatedAt  DateTime @updatedAt @map(name: "updated_at")
+model Account {
+  id                 String  @id @default(cuid())
+  userId             String  @map("user_id")
+  type               String
+  provider           String
+  providerAccountId  String  @map("provider_account_id")
+  refresh_token      String?
+  access_token       String?
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String?
+  session_state      String?
+  oauth_token_secret String?
+  oauth_token        String?
 
-  @@unique([username, email])
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique @map("session_token")
+  userId       String   @map("user_id")
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  username      String
+  name          String?
+  email         String?   @unique @db.VarChar(125)
+  emailVerified DateTime? @map("email_verified")
+  password      String
+  image         String?
+  createdAt     DateTime  @default(now()) @map(name: "created_at")
+  updatedAt     DateTime  @updatedAt @map(name: "updated_at")
+  accounts      Account[]
+  sessions      Session[]
+
   @@map(name: "users")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@map("verificationtokens")
 }
 
 model Doctor {
@@ -30,31 +73,33 @@ model Doctor {
   last_name              String                  @db.VarChar(50)
   professional_statement String                  @db.VarChar(4000)
   image_url              String                  @db.VarChar(255)
-  Doctor_Specialization  Doctor_Specialization[]
+	specializations DoctorsSpecialization[]
   createdAt              DateTime                @default(now()) @map(name: "created_at")
   updatedAt              DateTime                @updatedAt @map(name: "updated_at")
 
   @@map(name: "doctors")
 }
 
-model Doctor_Specialization {
-  id                Int           @id @default(autoincrement())
-  doctor_id         Int
-  doctor            Doctor        @relation(fields: [doctor_id], references: [id])
-  specialization_id Int
-  specialization    Specializaton @relation(fields: [specialization_id], references: [id])
-  createdAt         DateTime      @default(now()) @map(name: "created_at")
-  updatedAt         DateTime      @updatedAt @map(name: "updated_at")
-
-  @@map(name: "doctor_specialization")
-}
-
-model Specializaton {
+model Specialization {
   id                    Int                     @id
   specialization_name   String                  @db.VarChar(100)
   createdAt             DateTime                @default(now()) @map(name: "created_at")
   updatedAt             DateTime                @updatedAt @map(name: "updated_at")
-  Doctor_Specialization Doctor_Specialization[]
+  doctors DoctorsSpecialization[]
 
   @@map(name: "specialization")
 }
+
+model DoctorsSpecialization {
+  id               Int           @default(autoincrement())
+  doctor           Doctor        @relation(fields: [doctorId], references: [id])
+  doctorId         Int           @map("doctor_id")
+  specialization   Specialization @relation(fields: [specializationId], references: [id])
+  specializationId Int           @map("specialization_id")
+  createdAt        DateTime      @default(now()) @map(name: "created_at")
+  updatedAt        DateTime      @updatedAt @map(name: "updated_at")
+
+  @@map(name: "doctor_specialization")
+	@@id([doctorId, specializationId])
+}
+
