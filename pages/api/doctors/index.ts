@@ -1,29 +1,37 @@
-import { prisma } from "../../../lib/prisma";
+import { prisma } from "@/lib/prisma";
 import { NextApiRequest, NextApiResponse } from "next";
 
 export async function getUsers(req: NextApiRequest, res: NextApiResponse) {
   switch (req.method) {
     case "GET":
-      const users = await prisma.user.findMany({
+      const doctors = await prisma.doctor.findMany({
         select: {
-          username: true,
-          email: true,
+          id: true,
+          first_name: true,
+          last_name: true,
+          professional_statement: true,
+          image_url: true,
+          specializations: {
+            select: {
+              specialization: {
+                select: {
+                  id: true,
+                  specialization_name: true,
+                },
+              },
+            },
+          },
         },
       });
-      res.json(users);
-  }
-  if (req.method === "GET") {
-  } else if (req.method === "POST") {
-    const user = await prisma.user.create({
-      data: {
-        username: req.body.username,
-        email: req.body.email,
-        password: req.body.password,
-      },
-    });
-    res.json("Ok");
-  } else {
-    console.log("Could not be created");
+      const result = doctors.map((doctor) => {
+        return {
+          ...doctor,
+          specializations: doctor.specializations.map(
+            (specialization) => specialization.specialization
+          ),
+        };
+      });
+      res.json({ doctors: result });
   }
 }
 
