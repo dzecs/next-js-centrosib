@@ -18,6 +18,7 @@ export default function Nosotros() {
             <div className='imagen1'>
                 <img src="img/dentista7.jpg" />
                 <img src="img/CentroSib-1-900x600.png" />
+                <img src="img/dentista6.jpg"/>
             </div>      
             
             
@@ -61,7 +62,6 @@ export default function Nosotros() {
                     <h3>Tatamientos de limpieza</h3>
                     <img src="img/limpieza.jpg"/>
                 </div>
-
                 <div className='limpieza2'>
                     <h3>Mejorando la calidad de vida de nuestros pacientes</h3>
                     <img src="img/limpieza1.jpg"/>
@@ -79,15 +79,18 @@ export default function Nosotros() {
             </div>
             <div calassName='consultorio'>
                 <h3>Nuestros consultorios</h3>
-                <div className='consultorio__img1'>
-                    <img src="img/consultorio1.jpg" />
+                <img src="img/consultorio1.jpg" />
+                <img src="img/consultorio2.jpg" />
+                <img src="img/consultorio3.jpg" />
+                {/* <div className='consultorio__img1'>
+                    
                 </div>
                 <div className='consultorio__img2'>
-                    <img src="img/consultorio2.jpg" />
+                    
                 </div>
                 <div className='consultorio__img3'>
-                    <img src="img/consultorio3.jpg" />
-                </div>
+                    
+                </div> */}
             </div>
             <div className='ortodoncia'>
                 <div className='ortodoncia__'>
@@ -110,7 +113,6 @@ export default function Nosotros() {
                 </div>
             </div>
 
-
             <div className='dentista'>
                 <img src="img/dentista1.jpg"/>
                 <img src="img/dentista2.jpg"/>
@@ -120,7 +122,6 @@ export default function Nosotros() {
                 <img src="img/dentista5.jpg"/>
             </div>
             <div className='dentista'>   
-                <img src="img/dentista6.jpg"/>
                 
                 <img src="img/dentista10.jpg"/>
             </div>
@@ -141,7 +142,6 @@ export default function Nosotros() {
                 border-radius:4px;
                 transition:.3s;
             }
-
             h1 {
                 font-size: 2.3em;
                 line-height: 1.3em;
@@ -165,3 +165,37 @@ export default function Nosotros() {
                 text-align: justify;
                 font-weight: 300;
             }
+
+            h3:hover{
+                font-size:2.5rem;
+                transition:2s;
+            }
+
+            .parrafo1{
+                background:#222;
+            }
+            
+            .dentista{
+                background:#CEF2CC;
+                display:inline-block;
+                border-radius:15px;
+                margin:2px;
+            }
+
+            img{
+                
+                display:inline-block;
+                border-radius:10px;
+                margin:10px;
+                width:450px;
+                height:290px;
+                object-fit: cover;
+            }
+            .consultorio{
+                display:block;
+            }
+        `}</style>
+    </div>
+    
+    )
+}
