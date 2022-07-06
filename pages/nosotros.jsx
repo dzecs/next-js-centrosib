@@ -4,12 +4,13 @@ export default function nosotros() {
     return (
     <div>
         <div className='container'>
-            <div className='nosotros'>
-                <h1> QUIÉNES SOMOS
-                    Somos un grupo de odontólogos dedicados construir sonrisas,
+            <div className='nosotros' >
+                <h1> QUIÉNES SOMOS</h1>
+                
+                <p>Somos un grupo de odontólogos dedicados construir sonrisas,
                     unimos salud bucal, estética y calidad. 
-                    Escuchamos tus expectativas y juntos planeamos el mejor tratamiento. 
-                </h1>
+                    Escuchamos tus expectativas y juntos planeamos el mejor tratamiento.
+                </p>
             </div> 
             
             <h3>Odontología general - Ortodoncia - Implantes - Estética</h3>
@@ -34,6 +35,8 @@ export default function nosotros() {
             
             <div className='imagen2'>
                 <img src="img/CentroSib-2-900x600.png" />
+                <img src="img/dentista3.jpg"/>
+                <img src="img/dentista5.jpg"/>
             </div> 
             
             
@@ -51,6 +54,8 @@ export default function nosotros() {
             <div className='imagen3'>
                 
                 <img src="img/CentroSib-3-900x600.png"/>
+                <img src="img/dentista10.jpg"/>
+                <img src="img/dentista2.jpg"/>
             </div> 
             <h2>                
                 TODO LO QUE EL PACIENTE NECESITA, EN DIAGNÓSTICO Y TRATAMIENTO ODONTOLOGICO,
@@ -81,16 +86,7 @@ export default function nosotros() {
                 <h3>Nuestros consultorios</h3>
                 <img src="img/consultorio1.jpg" />
                 <img src="img/consultorio2.jpg" />
-                <img src="img/consultorio3.jpg" />
-                {/* <div className='consultorio__img1'>
-                    
-                </div>
-                <div className='consultorio__img2'>
-                    
-                </div>
-                <div className='consultorio__img3'>
-                    
-                </div> */}
+                <img src="img/consultorio3.jpg" />                
             </div>
             <div className='ortodoncia'>
                 <div className='ortodoncia__'>
@@ -107,7 +103,7 @@ export default function nosotros() {
                     <h3>Ortodoncia invisible</h3>
                     <img src="img/ortodoncia4.jpg"/>
                 </div>
-                <div className='ortodoncia__'>
+                <div className='dentista'>
                     <h3>Ortodoncia en adultos</h3>
                     <img src="img/ortodoncia7.jpg"/>
                 </div>
@@ -116,17 +112,10 @@ export default function nosotros() {
 
             <div className='dentista'>
                 <img src="img/dentista1.jpg"/>
-                <img src="img/dentista2.jpg"/>
-            </div>
-            <div className='dentista'>
-                <img src="img/dentista3.jpg"/>
-                <img src="img/dentista5.jpg"/>
-            </div>
-            <div className='dentista'>   
                 
-                
-                <img src="img/dentista10.jpg"/>
             </div>
+            
+
         </div>
         <style jsx>{`
             .container{
@@ -144,6 +133,7 @@ export default function nosotros() {
                 border-radius:4px;
                 transition:.3s;
             }
+            
 
             h1 {
                 font-size: 2.3em;
@@ -184,13 +174,18 @@ export default function nosotros() {
                 border-radius:15px;
                 margin:2px;
             }
-
+            .ortodoncia__{
+                background:#CEF2CC;
+                display:inline-block;
+                border-radius:15px;
+                margin:2px;
+            }
             img{
                 
                 display:inline-block;
                 border-radius:10px;
                 margin:10px;
-                width:450px;
+                width:400px;
                 height:290px;
                 object-fit: cover;
             }
