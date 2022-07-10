@@ -55,6 +55,7 @@ export default function contacto() {
               </a>
             </strong>
           </h2>
+
           </div>
           <div className="mt-3 flex flex-col gap-2  items-end w-full">
           <h3 className=""> Horarios</h3>

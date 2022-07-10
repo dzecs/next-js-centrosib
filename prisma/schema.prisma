@@ -73,31 +73,33 @@ model Doctor {
   last_name              String                  @db.VarChar(50)
   professional_statement String                  @db.VarChar(4000)
   image_url              String                  @db.VarChar(255)
-  Doctor_Specialization  Doctor_Specialization[]
+	specializations DoctorsSpecialization[]
   createdAt              DateTime                @default(now()) @map(name: "created_at")
   updatedAt              DateTime                @updatedAt @map(name: "updated_at")
 
   @@map(name: "doctors")
 }
 
-model Doctor_Specialization {
-  id               Int           @id @default(autoincrement())
-  doctorId         Int           @map("doctor_id")
-  doctor           Doctor        @relation(fields: [doctorId], references: [id])
-  specializationId Int           @map("specialization_id")
-  specialization   Specializaton @relation(fields: [specializationId], references: [id])
-  createdAt        DateTime      @default(now()) @map(name: "created_at")
-  updatedAt        DateTime      @updatedAt @map(name: "updated_at")
-
-  @@map(name: "doctor_specialization")
-}
-
-model Specializaton {
+model Specialization {
   id                    Int                     @id
   specialization_name   String                  @db.VarChar(100)
   createdAt             DateTime                @default(now()) @map(name: "created_at")
   updatedAt             DateTime                @updatedAt @map(name: "updated_at")
-  Doctor_Specialization Doctor_Specialization[]
+  doctors DoctorsSpecialization[]
 
   @@map(name: "specialization")
 }
+
+model DoctorsSpecialization {
+  id               Int           @default(autoincrement())
+  doctor           Doctor        @relation(fields: [doctorId], references: [id])
+  doctorId         Int           @map("doctor_id")
+  specialization   Specialization @relation(fields: [specializationId], references: [id])
+  specializationId Int           @map("specialization_id")
+  createdAt        DateTime      @default(now()) @map(name: "created_at")
+  updatedAt        DateTime      @updatedAt @map(name: "updated_at")
+
+  @@map(name: "doctor_specialization")
+	@@id([doctorId, specializationId])
+}
+
