@@ -2,35 +2,44 @@ import Link from "next/link";
 
 export const Navbar = (props: {}) => {
   return (
-    <nav className="">
-      <ul className="flex justify-end gap-3 pr-7 bg-white items-center h-16">
-        <li className="">
+
+<nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5  dark:bg-gray-800">
+  <div className="container mx-auto">
+    <div className="hidden w-full md:block md:w-auto" id="mobile-menu">
+      <ul className="flex justify-between mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+       <div className="flex gap-3">
+        <li>
           <Link href="/">
-            <a>Home</a>
+            <a className="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" aria-current="page">Home</a>
           </Link>
         </li>
         <li>
           <Link href="/nosotros">
-            <a>Nosotros</a>
+            <a className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" >Nosotros</a>
           </Link>
-        </li>
+         </li>
         <li>
           <Link href="/contacto">
-            <a>Contacto</a>
+            <a className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contacto</a>
           </Link>
         </li>
-        <li className="">
+        </div>
+           <div className="flex gap-3">
+           <li>
           <Link href="/login">
-            <a>Iniciar Sesión</a>
+          <a className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Iniciar sesión</a>
           </Link>
-        </li>
-        /
-        <li>
+          </li>
+          <li>
           <Link href="/signup">
-            <a>Registro</a>
+          <a className="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Registrarse</a>
           </Link>
-        </li>
-      </ul>
-    </nav>
+           </li>
+    </div>
+    </ul>
+      </div>
+    </div>
+</nav>
+
   );
 };

@@ -112,34 +112,34 @@ export default function nosotros() {
         </div>
         <style jsx>{`
 
-            .parrafo1{
+            .parrafo1 {
                 padding:150px;
                 font-size: 1.8em;
             }
 
-            .parrafo2{
+            .parrafo2 {
                 font-size: 1.8em;
                 margin-top:100px;
                 margin-bottom:100px;
             }
 
-            .nosotros{
+            .nosotros {
                 background:#07575b;
                 color: #fff;
                 text-align:center;
                 padding:35px;
             }
 
-            .container{
+
+            .container 
                 margin-left:auto;
                 margin-right:auto;
                 text-align:center;
                 align-items: center;
             }
 
-
-            {/* div:hover{
-                
+            {/* 
+            div:hover 
                 border:1px solid #333;
                 border-radius:4px;
                 transition:1.5s;
@@ -161,47 +161,42 @@ export default function nosotros() {
                 line-height: 1.3em;
                 margin: 15px;
                 text-align: center;
-                
                 padding: 30px;
-                
             }
-
+            
             h3 {
-                
                 padding-top:50px;
                 padding-bottom:50px;
                 font-size: 2em;
                 line-height: 1.3em;
                 text-align:center;
-                
             }
-            h4{
+            
+            h4 {
                 font-size:1.8em;
                 max-width:1200px;
                 margin:0 auto;
             }
 
-            {/* h3:hover{
-                font-size:2.5rem;
-                transition:2s;
-            } */}
-
-            
+            {/*  
+              h3:hover{
+                  font-size:2.5rem;
+                  transition:2s;
+              }
+            */}
             
             .dentista{
-                
                 display:inline-block;
                 border-radius:15px;
                 margin:2px;
             }
-            .ortodoncia__{
-                
+            
+            .ortodoncia {
                 display:inline-block;
-                border-radius:15px;
-                
+                border-radius:15px; 
             }
-            img{
-                
+            
+            img{   
                 display:inline-block;
                 border-radius:10px;
                 margin:10px;
@@ -209,44 +204,46 @@ export default function nosotros() {
                 height:290px;
                 object-fit: cover;
             }
-            .imagen3{
+            
+            .imagen3 
                 margin-bottom:150px;
             }
-            .limpieza1{
+            
+            .limpieza1 
                 display:inline-block;
                 width:600px;
                 height:400px;
                 object-fit: contain;
             }
-            .limpieza2{
+            
+            .limpieza2 
                 display:inline-block;
                 width:600px;
                 padding-top:30px;
                 margin-bottom:10vh;
                 
-            }.limpieza2 h3{
-                
+            }
+            .limpieza2 h3 {    
                 width:450px;
                 margin:0 auto;
                 
             }
 
-            .consultorio{
-            
+            .consultorio {
                 padding-bottom:20px;
             }
-            .ortodoncia{
             
+            .ortodoncia {
                 margin-bottom:10%;
             }
-            .color{
-            color: #fff;
-            background:#07575b;
-            margin-bottom:30px;
-        }
+            
+            .color {
+                color: #fff;
+                background:#07575b;
+                margin-bottom:30px;
+            }
         
         `}</style>
     </div>
-    
     )
 }
